@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:37:09 by antferna          #+#    #+#             */
-/*   Updated: 2023/08/22 13:03:30 by antferna         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:52:02 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	check_args2(char **argv, t_data *data)
 		data->arr = ft_split(argv[1], ' ');
 		if (!data->arr)
 			return (EXIT_FAILURE);
+		if (!data->arr[0])
+			return (ft_free_full_arr(data->arr), ft_putendl_fd("Error", 2), 1);
 		i = -1;
 		while (data->arr[++i] != NULL)
 		{
