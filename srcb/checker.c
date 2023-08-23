@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 14:25:03 by antferna          #+#    #+#             */
-/*   Updated: 2023/08/23 13:17:40 by antferna         ###   ########.fr       */
+/*   Updated: 2023/08/23 13:33:21 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	main2(t_data *data)
 	if (init_stack_a(data) == EXIT_FAILURE)
 		return (ft_free_full_arr(data->arr),
 			ft_free_stacks(data), ft_putendl_fd("Error", 2), EXIT_FAILURE);
+	if (is_sorted(&data->stack_a) && data->stack_b == NULL)
+		return (ft_printf("OK\n"), EXIT_SUCCESS);
 	line = get_next_line(0);
 	while (line)
 	{
